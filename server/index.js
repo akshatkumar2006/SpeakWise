@@ -13,8 +13,28 @@ const app = express();
 // Connect to MongoDB
 connectDB();
 
+// CORS allowed urls
+const allowedOrigins = [
+    "http://localhost:3000",
+    "http://localhost:5173",
+    "https://speakwise-one.vercel.app",
+];
 // Middleware
-app.use(cors());
+app.use(
+    cors({
+        origin: function (origin, callback) {
+            if (!origin) return callback(null, true);
+
+            if (allowedOrigins.indexOf(origin) === -1) {
+                return callback(new Error("Not allowed by CORS"), false);
+            }
+            return callback(null, true);
+        },
+        credentials: true,
+        methods: ["GET", "POST", "PUT", "DELETE", "PATCH"],
+        allowedHeaders: ["Content-Type", "Authorization"],
+    })
+);
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -24,6 +44,11 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 // Routes
 app.use("/api/auth", authRoutes);
 app.use("/api/speech", speechRoutes);
+
+// Server entry point
+app.get("/", (req, res) => {
+    res.send("Welcome to the SpeakWise");
+});
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {
