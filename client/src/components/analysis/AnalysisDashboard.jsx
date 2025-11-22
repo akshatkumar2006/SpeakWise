@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { 
   BarChart, 
   Bar, 
@@ -17,7 +18,12 @@ import {
 import PronunciationAssessment from './PronunciationAssessment';
 import { Play, Pause, Volume2, TrendingUp, Target, Zap } from 'lucide-react';
 
-const AnalysisDashboard = ({ analysisData }) => {
+const AnalysisDashboard = ({ analysisData: propAnalysisData }) => {
+  const location = useLocation();
+  // Get the analysisData passed from the PerformanceStudio via navigation state
+  // If not available in location.state, fall back to the prop (for backwards compatibility)
+  const analysisData = location.state?.analysisData || propAnalysisData;
+
   const [currentTranscript, setCurrentTranscript] = useState('');
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentWordIndex, setCurrentWordIndex] = useState(-1);
