@@ -17,8 +17,6 @@ router.get("/", (req, res) => {
     res.status(200).json({ message: "Auth routes are working" });
 });
 
-
-
 // Register
 router.post(
     "/register",

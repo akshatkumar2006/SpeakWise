@@ -11,6 +11,7 @@
     "test-google-speech": "node scripts/test-google-speech.js",
     "test-ai-feedback": "node scripts/test-ai-feedback.js",
     "seed-exercises": "node scripts/seedExercises.js"
+    "test-db": "node -e \"require('./config/database')(); setTimeout(() => process.exit(0), 2000)\""
   },
   "dependencies": {
     "@google-cloud/speech": "^7.2.1",
