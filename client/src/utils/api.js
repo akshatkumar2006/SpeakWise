@@ -1,6 +1,11 @@
 import axios from 'axios';
 
+// Use environment variable for API URL (falls back to localhost for development)
+const API_BASE_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
+
 const api = axios.create({
+  baseURL: `${API_BASE_URL}/api`,
+  timeout: 30000, // Increased timeout for speech analysis
   baseURL: '/api',
   timeout: 10000,
 });
