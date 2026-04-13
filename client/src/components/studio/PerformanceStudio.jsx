@@ -6,6 +6,7 @@ import { analyzeAudio } from '../../api';
 import useAuthStore from '../../store/authStore';
 import toast from 'react-hot-toast';
 import EvaluationModeSelector from './EvaluationModeSelector';
+import { trackAIFeedbackGenerated } from '../../utils/analytics';
 
 const PerformanceStudio = ({ onAnalysisComplete }) => {
   const [isRecording, setIsRecording] = useState(false);
@@ -338,6 +339,9 @@ const PerformanceStudio = ({ onAnalysisComplete }) => {
           }, badgeDelay + (index * 1000)); // Show after badges, staggered
         });
       }
+
+      // Track AI feedback generation
+      trackAIFeedbackGenerated('overall');
 
       // If the component was given an onAnalysisComplete callback, call it
       if (typeof onAnalysisComplete === 'function') {

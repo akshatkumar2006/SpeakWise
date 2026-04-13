@@ -4,6 +4,7 @@ import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/react';
 import { Toaster } from 'react-hot-toast';
 import useAuthStore from './store/authStore';
+import { initializeGA } from './utils/analytics';
 import AuthPage from './components/auth/AuthPage';
 import OAuthCallback from './components/auth/OAuthCallback';
 import OnboardingWrapper from './components/auth/OnboardingWrapper';
@@ -23,6 +24,8 @@ function App() {
       await checkAuth();
       setInitializing(false);
     };
+    // Initialize Google Analytics
+    initializeGA();
     initAuth();
   }, [checkAuth]);
 

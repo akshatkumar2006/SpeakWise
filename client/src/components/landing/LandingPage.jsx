@@ -21,6 +21,8 @@ import {
   PlayCircle
 } from 'lucide-react';
 import Button from '../common/Button';
+import ContactSection from './ContactSection';
+import LandingFooter from './LandingFooter';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -152,6 +154,9 @@ const LandingPage = () => {
               <a href="#benefits" className="text-[#5A5A7A] hover:text-[#1E2A5A] transition-colors font-medium">
                 Benefits
               </a>
+              <a href="#contact" className="text-[#5A5A7A] hover:text-[#1E2A5A] transition-colors font-medium">
+                Contact
+              </a>
               <Button
                 variant="outline"
                 size="sm"
@@ -207,6 +212,13 @@ const LandingPage = () => {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Benefits
+              </a>
+              <a 
+                href="#contact" 
+                className="block py-2 text-[#5A5A7A] hover:text-[#1E2A5A] font-medium"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Contact
               </a>
               <Button
                 variant="primary"
@@ -556,35 +568,11 @@ const LandingPage = () => {
         </div>
       </section>
 
+      {/* Contact Section */}
+      <ContactSection />
+
       {/* Footer */}
-      <footer className="py-12 px-4 sm:px-6 lg:px-8 border-t border-[#EEF2FF] bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#1E2A5A] to-[#2A3A7A] rounded-lg flex items-center justify-center shadow-md">
-                <Mic className="w-5 h-5 text-white" />
-              </div>
-              <span className="text-xl font-bold text-[#1E2A5A]">
-                SpeakWise
-              </span>
-            </div>
-            <div className="text-sm text-[#5A5A7A]">
-              © 2026 SpeakWise. All rights reserved.
-            </div>
-            <div className="flex items-center space-x-6 text-sm text-[#5A5A7A]">
-              <a href="#" className="hover:text-[#1FB6A6] transition-colors">
-                Privacy
-              </a>
-              <a href="#" className="hover:text-[#1FB6A6] transition-colors">
-                Terms
-              </a>
-              <a href="#" className="hover:text-[#1FB6A6] transition-colors">
-                Contact
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <LandingFooter />
     </div>
   );
 };

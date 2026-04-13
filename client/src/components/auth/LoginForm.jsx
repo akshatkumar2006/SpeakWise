@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, LogIn, ArrowLeft } from 'lucide-react';
 import useAuthStore from '../../store/authStore';
+import { trackLogin } from '../../utils/analytics';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
@@ -31,14 +32,19 @@ const LoginForm = ({ onSwitchToRegister }) => {
     const result = await login(formData.email, formData.password);
     if (!result.success) {
       setError(result.error);
+    } else {
+      // Track successful login
+      trackLogin('email');
     }
   };
 
   const handleGoogleLogin = () => {
+    trackLogin('google');
     window.location.href = `${API_URL}/api/auth/google`;
   };
 
   const handleGitHubLogin = () => {
+    trackLogin('github');
     window.location.href = `${API_URL}/api/auth/github`;
   };
 

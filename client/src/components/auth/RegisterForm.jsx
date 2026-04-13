@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Eye, EyeOff, UserPlus, ArrowLeft } from 'lucide-react';
 import useAuthStore from '../../store/authStore';
+import { trackSignUp } from '../../utils/analytics';
 
 const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5001';
 
@@ -44,14 +45,19 @@ const RegisterForm = ({ onSwitchToLogin }) => {
     const result = await register(formData.name, formData.email, formData.password);
     if (!result.success) {
       setError(result.error);
+    } else {
+      // Track successful signup
+      trackSignUp('email');
     }
   };
 
   const handleGoogleLogin = () => {
+    trackSignUp('google');
     window.location.href = `${API_URL}/api/auth/google`;
   };
 
   const handleGitHubLogin = () => {
+    trackSignUp('github');
     window.location.href = `${API_URL}/api/auth/github`;
   };
 

@@ -162,7 +162,7 @@ const NewDashboardHome = ({ setActiveTab }) => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 py-8">
         
         {/* Welcome Hero Section */}
@@ -179,7 +179,7 @@ const NewDashboardHome = ({ setActiveTab }) => {
 
             {/* Streak Badge */}
             {stats.streak > 0 && (
-              <div className="bg-gradient-to-br from-orange-400 to-orange-600 text-white rounded-xl px-6 py-4 shadow-md">
+              <div className="bg-gradient-to-br from-orange-400 to-orange-600 dark:from-orange-700 dark:to-orange-800 text-white rounded-xl px-6 py-4 shadow-md">
                 <div className="flex items-center gap-2 mb-1">
                   <Flame className="w-5 h-5" />
                   <span className="text-2xl font-bold">{stats.streak}</span>
@@ -242,7 +242,7 @@ const NewDashboardHome = ({ setActiveTab }) => {
           <div className="lg:col-span-2 space-y-6">
             
             {/* Current Goal Card */}
-            <div className="bg-gradient-to-br from-slate-700 to-slate-900 rounded-xl shadow-lg p-6 text-white">
+            <div className="bg-gradient-to-br from-slate-700 to-slate-900 dark:from-gray-800 dark:to-gray-900 rounded-xl shadow-lg p-6 text-white">
               <div className="flex items-start justify-between mb-4">
                 <div>
                   <div className="flex items-center gap-2 mb-2">
@@ -290,7 +290,7 @@ const NewDashboardHome = ({ setActiveTab }) => {
 
               <button
                 onClick={() => navigate('/dashboard/journey')}
-                className="w-full bg-white text-slate-900 font-semibold py-3 rounded-lg hover:bg-gray-100 transition-colors flex items-center justify-center gap-2"
+                className="w-full bg-white dark:bg-gray-700 text-slate-900 dark:text-white font-semibold py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-600 transition-colors flex items-center justify-center gap-2 border border-gray-200 dark:border-gray-600"
               >
                 Continue Your Journey
                 <ChevronRight className="w-5 h-5" />
@@ -413,7 +413,7 @@ const NewDashboardHome = ({ setActiveTab }) => {
                 {/* AI Interview */}
                 <Link
                   to="/dashboard/interview"
-                  className="block p-4 rounded-lg bg-gradient-to-r from-slate-700 to-slate-800 text-white hover:from-slate-600 hover:to-slate-700 transition-all shadow-md"
+                  className="block p-4 rounded-lg bg-gradient-to-r from-slate-700 to-slate-800 dark:from-gray-800 dark:to-gray-900 text-white hover:from-slate-600 hover:to-slate-700 dark:hover:from-gray-700 dark:hover:to-gray-800 transition-all shadow-md"
                 >
                   <div className="flex items-center gap-3 mb-2">
                     <Briefcase className="w-6 h-6" />
@@ -428,7 +428,7 @@ const NewDashboardHome = ({ setActiveTab }) => {
                 {/* Daily Practice - Navigate to Scenario Training */}
                 <button
                   onClick={() => setActiveTab('practice')}
-                  className="w-full p-4 rounded-lg bg-gradient-to-r from-[#1E2A5A] to-[#2A3A7A] text-white hover:from-[#EEF2FF]0 hover:to-[#1E2A5A] transition-all shadow-md"
+                  className="w-full p-4 rounded-lg bg-gradient-to-r from-[#1E2A5A] to-[#2A3A7A] dark:from-blue-800/60 dark:to-blue-900/60 text-white hover:from-[#1A2449] hover:to-[#1F2F68] dark:hover:from-blue-700/60 dark:hover:to-blue-800/60 transition-all shadow-md"
                 >
                   <div className="flex items-center gap-3">
                     <MessageCircle className="w-6 h-6" />
@@ -443,7 +443,7 @@ const NewDashboardHome = ({ setActiveTab }) => {
                 {/* Free Practice - Navigate to Record Tab */}
                 <button
                   onClick={() => setActiveTab('studio')}
-                  className="w-full p-4 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-700 text-white hover:from-emerald-500 hover:to-emerald-600 transition-all shadow-md"
+                  className="w-full p-4 rounded-lg bg-gradient-to-r from-emerald-600 to-emerald-700 dark:from-emerald-700/70 dark:to-emerald-800/70 text-white hover:from-emerald-500 hover:to-emerald-600 dark:hover:from-emerald-600/70 dark:hover:to-emerald-700/70 transition-all shadow-md"
                 >
                   <div className="flex items-center gap-3">
                     <Target className="w-6 h-6" />
@@ -458,7 +458,7 @@ const NewDashboardHome = ({ setActiveTab }) => {
             </div>
 
             {/* Today's Focus */}
-            <div className="bg-amber-50 dark:from-amber-900/20 dark:to-yellow-900/20 rounded-xl p-6 border border-amber-200 dark:border-amber-800">
+            <div className="bg-amber-50 dark:bg-gray-800 rounded-xl p-6 border border-amber-200 dark:border-gray-700">
               <div className="flex items-center gap-2 mb-3">
                 <AlertCircle className="w-5 h-5 text-amber-600 dark:text-amber-400" />
                 <h3 className="font-bold text-gray-900 dark:text-white">Areas to Improve</h3>
@@ -514,9 +514,9 @@ const NewDashboardHome = ({ setActiveTab }) => {
             </div>
 
             {/* Community Hub - New Section */}
-            <div className="bg-gradient-to-br from-[#EEF2FF] to-[#F8FAFF] dark:from-[#2A3A7A]/20 dark:to-blue-900/20 rounded-2xl shadow-lg p-6 border border-[#6C63FF]/20 dark:border-[#4A42D8]">
+            <div className="bg-gradient-to-br from-[#EEF2FF] to-[#F8FAFF] dark:from-blue-900/30 dark:to-slate-800 rounded-2xl shadow-lg p-6 border border-[#6C63FF]/20 dark:border-blue-800/30">
               <div className="flex items-center gap-2 mb-3">
-                <Users className="w-5 h-5 text-[#6C63FF] dark:text-[#6C63FF]" />
+                <Users className="w-5 h-5 text-[#6C63FF] dark:text-blue-400" />
                 <h3 className="font-bold text-gray-900 dark:text-white">Community Hub</h3>
               </div>
               <p className="text-sm text-gray-700 dark:text-gray-300 mb-4">
@@ -538,7 +538,7 @@ const NewDashboardHome = ({ setActiveTab }) => {
               </div>
               <Link
                 to="/dashboard/community"
-                className="block w-full px-4 py-3 bg-gradient-to-r from-[#6C63FF] to-[#2A3A7A] hover:from-[#5A52E8] hover:to-[#2A3A7A] text-white text-center font-medium rounded-lg transition-all shadow-md"
+                className="block w-full px-4 py-3 bg-gradient-to-r from-[#6C63FF] to-[#2A3A7A] hover:from-[#5A52E8] hover:to-[#1F2F68] dark:from-[#5A52E8] dark:to-[#4A42D8] dark:hover:from-[#4A42D8] dark:hover:to-[#3A32C8] text-white text-center font-medium rounded-lg transition-all shadow-md"
               >
                 Explore Community
                 <ChevronRight className="inline w-4 h-4 ml-1" />
