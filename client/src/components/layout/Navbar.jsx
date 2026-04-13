@@ -89,7 +89,7 @@ const Navbar = () => {
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#F8FAFF]0 to-[#17A293] hover:from-[#1FB6A6] hover:to-[#17A293] dark:from-[#1FB6A6] dark:to-[#17A293] dark:hover:from-[#17A293] dark:hover:to-primary-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105 border border-primary-400 dark:border-[#1FB6A6] group"
+                className="flex items-center space-x-2 px-4 py-2 rounded-lg bg-gradient-to-r from-[#1FB6A6] to-[#17A293] hover:from-[#17A293] hover:to-[#1FB6A6] dark:from-[#1FB6A6] dark:to-[#17A293] dark:hover:from-[#17A293] dark:hover:to-primary-800 transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105 border border-primary-400 dark:border-[#1FB6A6] group"
               >
                 {/* Profile Picture or Initials with Ring Effect */}
                 <div className="relative">
@@ -134,7 +134,7 @@ const Navbar = () => {
                   {/* Menu Items */}
                   <button
                     onClick={handleProfileClick}
-                    className="w-full flex items-center space-x-3 px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-[#F8FAFF]0 to-[#17A293] hover:from-[#1FB6A6] hover:to-[#17A293] dark:from-[#1FB6A6] dark:to-[#17A293] dark:hover:from-[#17A293] dark:hover:to-primary-800 transition-all duration-200 group border-b border-primary-400 dark:border-[#1FB6A6]"
+                    className="w-full flex items-center space-x-3 px-4 py-3 text-sm font-medium text-white bg-gradient-to-r from-[#1FB6A6] to-[#17A293] hover:from-[#17A293] hover:to-[#1FB6A6] dark:from-[#1FB6A6] dark:to-[#17A293] dark:hover:from-[#17A293] dark:hover:to-primary-800 transition-all duration-200 group border-b border-primary-400 dark:border-[#1FB6A6]"
                   >
                     <div className="flex items-center justify-center w-8 h-8 rounded-lg bg-white/20 group-hover:bg-white/30 transition-all">
                       <User className="w-4 h-4" />

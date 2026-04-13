@@ -255,7 +255,7 @@ const JourneyMode = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-gray-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center">
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 flex items-center justify-center">
         <div className="text-center">
           <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-[#1E2A5A] mx-auto mb-4"></div>
           <p className="text-gray-600 dark:text-gray-400">Loading your journey...</p>
@@ -265,7 +265,7 @@ const JourneyMode = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <div className="max-w-7xl mx-auto px-4 py-8">
         
         {/* Header */}
@@ -436,7 +436,7 @@ const JourneyMode = () => {
 
             {/* AI Copilot Recommendation */}
             {currentTask && (
-              <div className="bg-[#EEF2FF] dark:from-[#1E2A5A]/20 dark:to-[#2A3A7A]/20 rounded-xl p-6 border border-[#1E2A5A]/20 dark:border-[#1E2A5A]">
+              <div className="bg-[#EEF2FF] dark:bg-blue-900/20 rounded-xl p-6 border border-[#1E2A5A]/20 dark:border-blue-800">
                 <div className="flex items-start gap-4">
                   <div className="bg-[#1E2A5A] rounded-lg p-3 text-white">
                     <Sparkles className="w-6 h-6" />
@@ -538,7 +538,7 @@ const JourneyMode = () => {
             </div>
 
             {/* Quick Tip */}
-            <div className="bg-[#F8FAFF] dark:from-blue-900/20 dark:to-cyan-900/20 rounded-xl p-6 border border-[#EEF2FF] dark:border-blue-800">
+            <div className="bg-[#F8FAFF] dark:bg-cyan-900/20 rounded-xl p-6 border border-[#EEF2FF] dark:border-cyan-800">
               <h4 className="font-bold text-gray-900 dark:text-white mb-2 flex items-center gap-2">
                 💡 Quick Tip
               </h4>
