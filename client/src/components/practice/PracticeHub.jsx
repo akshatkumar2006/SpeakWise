@@ -10,6 +10,7 @@ import LoadingSpinner from '../common/LoadingSpinner';
 import Badge from '../common/Badge';
 import ExerciseModal from './ExerciseModal';
 import api from '../../utils/api';
+import { trackPracticeSessionStart } from '../../utils/analytics';
 
 const PracticeHub = () => {
   const [loading, setLoading] = useState(true);
@@ -46,6 +47,8 @@ const PracticeHub = () => {
   };
 
   const handleStartExercise = (exercise) => {
+    // Track practice session start
+    trackPracticeSessionStart(exercise.type || exercise.category || 'general');
     setSelectedExercise(exercise);
     setShowExerciseModal(true);
   };

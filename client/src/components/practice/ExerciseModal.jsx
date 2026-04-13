@@ -5,6 +5,7 @@ import Card from '../common/Card';
 import Badge from '../common/Badge';
 import LoadingSpinner from '../common/LoadingSpinner';
 import api from '../../utils/api';
+import { trackPracticeSessionComplete } from '../../utils/analytics';
 
 const ExerciseModal = ({ exercise, onClose, onComplete }) => {
   const [isRecording, setIsRecording] = useState(false);
@@ -179,6 +180,9 @@ const ExerciseModal = ({ exercise, onClose, onComplete }) => {
       if (response.data.success) {
         console.log('🎉 Progress updated successfully!');
         console.log('   - New achievements:', response.data.data.newAchievements);
+        
+        // Track practice session completion
+        trackPracticeSessionComplete(exercise.type || exercise.category || 'general', recordingTime);
         
         // Notify parent component
         onComplete(response.data.data);

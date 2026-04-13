@@ -15,6 +15,7 @@ const onboardingRoutes = require("./routes/onboarding.routes");
 const interviewRoutes = require("./routes/interview.routes");
 const journeyRoutes = require("./routes/journey.routes");
 const userRoutes = require("./routes/user.routes");
+const contactRoutes = require("./routes/contact.routes");
 const mongoose = require("mongoose");
 const passport = require("./config/passport"); // Import passport AFTER dotenv
 const AchievementService = require("./services/achievement.service");
@@ -126,6 +127,7 @@ app.use("/api/onboarding", onboardingRoutes);
 app.use("/api/interview", interviewRoutes);
 app.use("/api/journey", journeyRoutes);
 app.use("/api/user", userRoutes);
+app.use("/api/contact", contactRoutes);
 
 // Root route
 app.get("/", (req, res) => {
